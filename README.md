@@ -2,7 +2,7 @@
 
 A minimalist and responsive food ordering application built using Vue and Bootstrap
 
-![Preview Kulineran](./public/assets/img/kulineran-2.png)
+![Preview Kulineran](./public/assets/img/kulineran-4.png)
 
 ## Project setup
 
