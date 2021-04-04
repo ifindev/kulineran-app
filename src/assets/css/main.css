@@ -1,7 +1,18 @@
+*,
+*:active,
+*:focus {
+  outline: none;
+}
+
 #app {
   font-family: 'Montserrat', sans-serif;
 }
 
 .router-link-exact-active {
   font-weight: bold;
+}
+
+.badge-success,
+.btn-success {
+  background-color: #4eb883;
 }
