@@ -16,9 +16,9 @@
         </div>
       </div>
 
-      <div class="row mt-3">
+      <div class="row mt-2 mb-3">
         <div
-          class="col-md-3 mt-4"
+          class="col-md-4 mt-4 d-flex align-items-stretch"
           v-for="product in products"
           :key="product.id"
         >
