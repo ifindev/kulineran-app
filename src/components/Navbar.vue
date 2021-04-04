@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
+    <div class="container pt-4">
       <a class="navbar-brand" href="#">Kulineran</a>
       <button
         class="navbar-toggler navbar-toggler-right"

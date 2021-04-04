@@ -2,7 +2,7 @@
   <div class="hero">
     <!-- Desktop -->
     <div class="d-none d-md-block">
-      <div class="row mt-4">
+      <div class="row mt-5">
         <div class="col-md-6">
           <div class="d-flex h-100">
             <div class="justify-content-center align-self-center">
@@ -30,7 +30,7 @@
         <div class="col-md-6 mt-4">
           <img src="../assets/img/hero.png" alt="food image" width="100%" />
         </div>
-        <div class="col-md-6 mt-4">
+        <div class="col-md-6 mt-5">
           <div class="d-flex h-100">
             <div class="justify-content-center align-self-center">
               <h2>
