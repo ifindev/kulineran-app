@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar :updateKeranjang="keranjangs" />
     <div class="container">
       <!-- Breadcrumb -->
       <div class="row mt-4">
@@ -68,7 +68,9 @@
                     </strong>
                   </td>
                   <td class="text-center text-danger">
-                    <b-icon-trash></b-icon-trash>
+                    <b-icon-trash
+                      @click="hapusPesanan(keranjang.id)"
+                    ></b-icon-trash>
                   </td>
                 </tr>
 
@@ -109,6 +111,26 @@ export default {
   methods: {
     setKerangjang: function(data) {
       this.keranjangs = data;
+    },
+
+    hapusPesanan: function(id) {
+      axios
+        .delete('http://localhost:3000/keranjangs/' + id)
+        .then((response) => {
+          this.$toast.error('Pesanan Berhasil Dihapus!', {
+            type: 'error',
+            position: 'top-right',
+            duration: 2000,
+            dismissible: true,
+          });
+
+          /* update data pesanan */
+          axios
+            .get('http://localhost:3000/keranjangs')
+            .then((response) => this.setKerangjang(response.data))
+            .catch((error) => console.log('Gagal: ', error));
+        })
+        .catch((error) => console.log('Gagal: ', error));
     },
   },
 

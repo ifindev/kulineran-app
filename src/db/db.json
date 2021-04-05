@@ -99,46 +99,6 @@
       "gambar": "lontong-opor-ayam.jpg"
     }
   ],
-  "keranjangs": [
-    {
-      "product": {
-        "id": 1,
-        "kode": "K-01",
-        "nama": "Sate Ayam",
-        "harga": 16000,
-        "is_ready": true,
-        "gambar": "sate-ayam.jpg"
-      },
-      "jumlah_pesanan": "1",
-      "keterangan": "Pedas",
-      "id": 1
-    },
-    {
-      "product": {
-        "id": 3,
-        "kode": "K-03",
-        "nama": "Nasi Rames",
-        "harga": 12000,
-        "is_ready": true,
-        "gambar": "nasi-rames.jpg"
-      },
-      "jumlah_pesanan": "3",
-      "keterangan": "Nasi setengah semua",
-      "id": 2
-    },
-    {
-      "product": {
-        "id": 3,
-        "kode": "K-03",
-        "nama": "Nasi Rames",
-        "harga": 12000,
-        "is_ready": true,
-        "gambar": "nasi-rames.jpg"
-      },
-      "jumlah_pesanan": "3",
-      "keterangan": "pedas",
-      "id": 3
-    }
-  ],
+  "keranjangs": [],
   "pesanans": []
 }
