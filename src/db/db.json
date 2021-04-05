@@ -100,5 +100,112 @@
     }
   ],
   "keranjangs": [],
-  "pesanans": []
+  "pesanans": [
+    {
+      "nama": "Arifin",
+      "noMeja": "2",
+      "keranjangs": [
+        {
+          "product": {
+            "id": 1,
+            "kode": "K-01",
+            "nama": "Sate Ayam",
+            "harga": 16000,
+            "is_ready": true,
+            "gambar": "sate-ayam.jpg"
+          },
+          "jumlah_pesanan": "4",
+          "keterangan": "Pedas",
+          "id": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "nama": "Eko",
+      "noMeja": "2",
+      "keranjangs": [
+        {
+          "product": {
+            "id": 1,
+            "kode": "K-01",
+            "nama": "Sate Ayam",
+            "harga": 16000,
+            "is_ready": true,
+            "gambar": "sate-ayam.jpg"
+          },
+          "jumlah_pesanan": "2",
+          "keterangan": "Pedas",
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "kode": "K-02",
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg"
+          },
+          "jumlah_pesanan": "2",
+          "keterangan": "Pakai merica. Gapake bawang goreng.",
+          "id": 2
+        }
+      ],
+      "id": 2
+    },
+    {
+      "nama": "Arifin",
+      "noMeja": "4",
+      "keranjangs": [
+        {
+          "product": {
+            "id": 4,
+            "kode": "K-04",
+            "nama": "Mie Ayam Bakso",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "mie-ayam-bakso.jpg"
+          },
+          "jumlah_pesanan": "2",
+          "keterangan": "Pedas",
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 7,
+            "kode": "K-07",
+            "nama": "Pangsit 6 pcs",
+            "harga": 5000,
+            "is_ready": true,
+            "gambar": "pangsit.jpg"
+          },
+          "jumlah_pesanan": "3",
+          "keterangan": "",
+          "id": 2
+        }
+      ],
+      "id": 3
+    },
+    {
+      "nama": "Arifin",
+      "noMeja": "2",
+      "keranjangs": [
+        {
+          "product": {
+            "id": 2,
+            "kode": "K-02",
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg"
+          },
+          "jumlah_pesanan": "2",
+          "keterangan": "",
+          "id": 1
+        }
+      ],
+      "id": 4
+    }
+  ]
 }

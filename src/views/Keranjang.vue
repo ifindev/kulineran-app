@@ -22,6 +22,7 @@
       </div>
       <!-- End of breadcrumb -->
 
+      <!-- Start of table -->
       <div class="row">
         <div class="col">
           <h2>Keranjang <strong>Saya</strong></h2>
@@ -88,6 +89,41 @@
           </div>
         </div>
       </div>
+      <!-- end of table -->
+
+      <!-- form checkout -->
+      <div class="row justify-content-end" v-if="keranjangs.length > 0">
+        <div class="col-md-4">
+          <form class="mt-4" v-on:submit.prevent>
+            <div class="form-group">
+              <label for="nama">Nama: </label>
+              <input
+                v-model="pesanan.nama"
+                type="text"
+                class="form-control"
+                id="nama"
+              />
+            </div>
+            <div class="form-group">
+              <label for="noMeja">Nomor Meja: </label>
+              <input
+                v-model="pesanan.noMeja"
+                type="text"
+                class="form-control"
+                id="noMeja"
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success float-right"
+              @click="checkout"
+            >
+              <b-icon-cart></b-icon-cart>
+              Pesan
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -105,6 +141,7 @@ export default {
   data() {
     return {
       keranjangs: [],
+      pesanan: {},
     };
   },
 
@@ -131,6 +168,41 @@ export default {
             .catch((error) => console.log('Gagal: ', error));
         })
         .catch((error) => console.log('Gagal: ', error));
+    },
+
+    checkout: function() {
+      if (this.pesanan.nama && this.pesanan.noMeja) {
+        this.pesanan.keranjangs = this.keranjangs;
+        axios
+          .post('http://localhost:3000/pesanans', this.pesanan)
+          .then((response) => {
+            this.keranjangs.map((item) => {
+              axios
+                .delete('http://localhost:3000/keranjangs/' + item.id)
+                .catch((error) => console.log('Gagal: ', error));
+            });
+
+            this.$toast.success('Pesanan Sudah Masuk!', {
+              type: 'success',
+              position: 'top-right',
+              duration: 2000,
+              dismissible: true,
+            });
+
+            /* Push router to kerangjang */
+            this.$router.push({ path: '/pesanan-sukses' });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        this.$toast.error('Nama & Nomor Meja Harus Diisi!', {
+          type: 'error',
+          position: 'top-right',
+          duration: 2000,
+          dismissible: true,
+        });
+      }
     },
   },
 
