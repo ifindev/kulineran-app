@@ -26,7 +26,6 @@
         </div>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
@@ -35,7 +34,6 @@
 import CardProduct from '@/components/CardProduct.vue';
 import Navbar from '@/components/Navbar.vue';
 import Hero from '@/components/Hero.vue';
-import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 
 export default {
@@ -45,7 +43,6 @@ export default {
     Navbar,
     Hero,
     CardProduct,
-    Footer,
   },
 
   data() {

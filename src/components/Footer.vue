@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-5 mb-3">
+  <footer class="mt-auto mb-3">
     <hr />
     <div class="container">
       <div class="row">
