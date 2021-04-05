@@ -26,6 +26,7 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
