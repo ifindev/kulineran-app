@@ -9,10 +9,13 @@
       <h5 class="card-title">{{ product.nama }}</h5>
       <p class="card-text">Harga: Rp. {{ product.harga }}</p>
       <div class="mt-auto">
-        <a href="#" class="mt-auto btn btn-success">
+        <router-link
+          :to="'/foods/' + product.id"
+          class="mt-auto btn btn-success"
+        >
           <b-icon-cart></b-icon-cart>
           Pesan
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
