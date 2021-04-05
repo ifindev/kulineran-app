@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <div class="container">
       <div class="row mt-4">
         <div class="col">
@@ -43,11 +44,13 @@
 
 <script>
 import CardProduct from '@/components/CardProduct.vue';
+import Navbar from '@/components/Navbar.vue';
 import axios from 'axios';
 
 export default {
   name: 'Foods',
   components: {
+    Navbar,
     CardProduct,
   },
   data() {
