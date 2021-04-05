@@ -38,14 +38,20 @@
         <h4>
           Harga: <strong>{{ product.harga }}</strong>
         </h4>
-        <form class="mt-4">
+        <form class="mt-4" v-on:submit.prevent>
           <div class="form-group">
             <label for="jumlah_pesanan">Jumlah Pesanan</label>
-            <input type="number" class="form-control" id="jumlah_pesanan" />
+            <input
+              type="number"
+              class="form-control"
+              id="jumlah_pesanan"
+              v-model="pesanan.jumlah_pesanan"
+            />
           </div>
           <div class="form-group">
             <label for="keterangan">Keterangan Tambahan</label>
             <textarea
+              v-model="pesanan.keterangan"
               type="text"
               class="form-control"
               id="keterangan"
@@ -54,7 +60,7 @@
             </textarea>
           </div>
 
-          <button type="submit" class="btn btn-success">
+          <button type="submit" class="btn btn-success" @click="tambahPesanan">
             <b-icon-cart></b-icon-cart>
             Pesan
           </button>
@@ -72,12 +78,45 @@ export default {
   data() {
     return {
       product: [],
+      pesanan: {
+        product: [],
+        jumlah_pesanan: '',
+        keterangan: '',
+      },
     };
   },
 
   methods: {
     setProduct: function(data) {
       this.product = data;
+    },
+    tambahPesanan: function() {
+      this.pesanan.product = this.product;
+      if (this.pesanan.jumlah_pesanan) {
+        axios
+          .post('http://localhost:3000/keranjangs', this.pesanan)
+          .then((response) => {
+            this.$toast.success('Sukses Masuk Keranjang!', {
+              type: 'success',
+              position: 'top-right',
+              duration: 2000,
+              dismissible: true,
+            });
+            this.pesanan.product = [];
+            this.pesanan.jumlah_pesanan = '';
+            this.pesanan.keterangan = '';
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        this.$toast.error('Jumlah Pesanan Harus Diisi!', {
+          type: 'error',
+          position: 'top-right',
+          duration: 2000,
+          dismissible: true,
+        });
+      }
     },
   },
 
